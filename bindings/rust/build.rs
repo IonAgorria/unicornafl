@@ -21,7 +21,7 @@ fn main() {
     println!("cargo:rerun-if-changed=../../CMakeLists.txt");
 
     Command::new("make")
-        .args(&["-C", "../.."])
+        .args(&["-C", "../..", "rust-bindings"])
         .status()
         .expect("failed to build unicornafl");
 

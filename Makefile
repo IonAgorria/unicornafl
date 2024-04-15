@@ -14,6 +14,10 @@ build/libunicornafl: build unicorn/build/libunicorn-common.a
 	cd ./build && cmake .. -D BUILD_SHARED_LIBS=no
 	$(MAKE) -C ./build -j8
 
+rust-bindings: build unicorn/build/libunicorn-common.a
+	cd ./build && cmake .. -D BUILD_SHARED_LIBS=no -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+	$(MAKE) -C ./build -j8
+
 format:
 	format.sh
 
