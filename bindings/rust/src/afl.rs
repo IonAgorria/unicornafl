@@ -8,7 +8,7 @@ use libc::{c_int, c_void};
 
 use crate::{ffi::uc_handle, uc_error, Unicorn};
 
-/// FFI for the forkserver
+//// FFI for the forkserver
 extern "C" {
     fn uc_afl_forkserver_start(
         engine: uc_handle,
